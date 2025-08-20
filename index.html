@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Bin Sadiq - Aspiring Data Scientist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            /* White text */
+            background-color: #1c1c1c;
+            /* Dark Gray background */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333333;
+            /* Darker Gray */
+            color: #39ff14;
+            /* Neon Green */
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding-bottom: 60px;
+            /* Ensure content doesn't overlap with footer */
+        }
+
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            background-color: #2d2d2d;
+            /* Dark Gray */
+            border-bottom: 2px solid #333333;
+            /* Darker Gray */
+            border-radius: 12px 12px 0 0;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background-color: #444444;
+            /* Medium Gray */
+            border: 1px solid #333333;
+            border-radius: 12px 12px 0 0;
+            margin-right: 2px;
+            color: #ffffff;
+            /* White text */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .tab:hover {
+            background-color: #39ff14;
+            /* Neon Green Hover */
+            color: #1c1c1c;
+            /* Dark Gray text on hover */
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #333333;
+            /* Darker Gray background */
+            border-radius: 12px;
+            border: 1px solid #444444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            overflow: auto;
+            /* Allow scrolling */
+        }
+
+        .active {
+            display: block;
+        }
+
+        footer {
+            background-color: #333333;
+            /* Darker Gray */
+            color: #39ff14;
+            /* Neon Green */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-title {
+            color: #39ff14;
+            /* Neon Green */
+            font-size: 26px;
+            border-bottom: 2px solid #39ff14;
+            /* Neon Green */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .projects li,
+        .research li,
+        .education li,
+        .certifications li,
+        .awards li,
+        .contact li,
+        .softwares li,
+        .experiences li {
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #444444;
+            border-radius: 8px;
+            background: #2d2d2d;
+            /* Dark Gray */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin-left: 10px;
+            /* Margin for left side */
+            margin-right: 10px;
+            /* Margin for right side */
+        }
+
+        a {
+            color: #00ffff;
+            /* Neon Cyan */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Key Skills style */
+        .key-skills {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .category {
+            background-color: #2d2d2d;
+            /* Green */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .item {
+            background-color: #4CAF50;
+            /* Dark Gray */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        /* Highlight style for Education section */
+        .highlight {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Muhammad Bin Sadiq</h1>
+        <p>Aspiring Data Scientist | AI Specialist</p>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab" onclick="openTab(event, 'about')">About</div>
+            <div class="tab" onclick="openTab(event, 'projects')">Projects</div>
+            <div class="tab" onclick="openTab(event, 'education')">Education</div>
+            <div class="tab" onclick="openTab(event, 'certifications')">Certifications</div>
+            <div class="tab" onclick="openTab(event, 'awards')">Awards</div>
+            <div class="tab" onclick="openTab(event, 'softwares')">Softwares</div>
+            <div class="tab" onclick="openTab(event, 'key-skills')">Key Skills</div>
+            <div class="tab" onclick="openTab(event, 'contact')">Contact</div>
+        </div>
+
+        <div id="about" class="tab-content active">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>Aspiring Data Scientist with a strong foundation in machine learning, deep learning, and data analytics. Eager to develop predictive models, perform complex data analysis, and deliver actionable insights. Proficient in Python, R, SQL, and data visualization tools such as Power BI and Tableau. Enthusiastic about working in fast-paced environments and driving process improvements.</p>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2 class="section-title">Projects</h2>
+            <ul class="projects">
+                <li>
+                        <a href="https://github.com/imuhammadbinsadiq/Deep-Learning-Models-Applications/blob/main/Convolutional%20Neural%20Network/real_time_emotion_recognition.ipynb"
+                            target="_blank"><strong>Real-Time Emotion Recognition</strong></a><br>
+                        Developed a real-time emotion recognition system using Convolutional Neural Networks (CNN) and OpenCV. The model can detect human emotions in real-time through a webcam feed.
+                    </li>
+                    <li>
+                        <a href="https://github.com/imuhammadbinsadiq/Deep-Learning-Models-Applications/blob/main/Recurrent%20Neural%20Network/rnn_sentiment_analysis.ipynb"
+                            target="_blank"><strong>LSTM-Based Sentiment Analysis of McDonald's Store Reviews</strong></a><br>
+                        This project utilizes an LSTM-based RNN to perform sentiment analysis on McDonald's Store reviews, classifying them as positive or negative. It showcases the power of deep learning in interpreting customer feedback.
+                    </li>
+                    <li>
+                        <a href="https://github.com/imuhammadbinsadiq/Deep-Learning-Models-Applications/blob/main/Convolutional%20Neural%20Network/cnn_real_time_object_detection.ipynb"
+                            target="_blank"><strong>Real-Time Object Detection Using YOLOv4 and OpenCV</strong></a><br>
+                        Developed a real-time object detection system using YOLOv4 and OpenCV. The system can identify and classify multiple objects in real-time through a webcam feed, providing accurate and efficient object detection and visualization.
+                    </li>
+                    <li>
+                        <a href="https://github.com/imuhammadbinsadiq/Deep-Learning-Models-Applications/blob/main/Convolutional%20Neural%20Network/cnn_image_classification.ipynb"
+                            target="_blank"><strong>Image Classification Using Convolutional Neural Networks (CNN)</strong></a><br>
+                        This project builds an image classification system using Convolutional Neural Networks (CNNs) to accurately identify objects in images, demonstrating the power of CNNs in computer vision tasks with the CIFAR-10 dataset.
+                    </li>
+                    <li>
+                        <a href="https://github.com/imuhammadbinsadiq/Deep-Learning-Models-Applications/blob/main/Convolutional%20Neural%20Network/cnn_fashion_mnist_classification.ipynb"
+                            target="_blank"><strong>Fashion MNIST Image Classification Using Convolutional Neural Networks (CNN)</strong></a><br>
+                        This project develops an image classification system using Convolutional Neural Networks (CNNs) to accurately identify various clothing items in images, showcasing the effectiveness of CNNs in computer vision tasks with the Fashion MNIST dataset.
+                    </li>
+            </ul>
+        </div>
+
+        <div id="education" class="tab-content">
+            <h2 class="section-title">Education</h2>
+            <ul class="education">
+                <li>
+                        <strong>BS in Computer Science</strong><br>
+                        UET Taxila(2022-26)<br>
+                    </li>
+            </ul>
+        </div>
+
+        
+        <div id="certifications" class="tab-content">
+            <h2 class="section-title">Certifications</h2>
+            <ul class="certifications">
+                <li>
+                    <a href="https://coursera.org/share/8027d1e803c8d3e42a668f752aab12f1" target="_blank"><strong>Machine Learning Specialization</strong></a><br>
+                    Stanford University & DeepLearning.AI
+                </li>
+                <li>
+                    <a href="https://coursera.org/share/3a13e0d00232b4f730076b8e8e02c703" target="_blank"><strong>Data Science Specialization</strong></a><br>
+                    IBM
+                </li>
+                <li>
+                    <a href="https://coursera.org/share/583692cc3c933f068b65c94464c917cb" target="_blank"><strong>Data Science Fundamentals with Python and SQL Specialization</strong></a><br>
+                    IBM
+                </li>
+                <li>
+                    <a href="https://coursera.org/share/c2694cd8d866583e511136724f48bb5a" target="_blank"><strong>Microsoft Power BI Data Analyst Specialization</strong></a><br>
+                    Microsoft
+                </li>
+            </ul>
+        </div>
+
+
+        <div id="awards" class="tab-content">
+            <h2 class="section-title">Awards</h2>
+            <ul class="awards">
+                <li>
+                        <strong>Merit-based Benevolent Scholarship</strong><br>
+                        Punjab Government, 2018-Present
+                </li>
+            </ul>
+        </div>
+
+        <div id="key-skills" class="tab-content">
+            <h2 class="section-title">Key Skills</h2>
+            <div class="key-skills">
+                <div class="category">Programming Languages</div>
+                <div class="items">
+                    <div class="item">Python</div>
+                    <div class="item">R</div>
+                    <div class="item">SQL</div>
+                </div>
+                <div class="category">Data Analysis & Visualization</div>
+                <div class="items">
+                    <div class="item">Pandas</div>
+                    <div class="item">NumPy</div>
+                    <div class="item">Matplotlib</div>
+                    <div class="item">Seaborn</div>
+                    <div class="item">Plotly</div>
+                    <div class="item">Power BI</div>
+                </div>
+                <div class="category">Machine Learning</div>
+                <div class="items">
+                    <div class="item">Scikit-learn</div>
+                    <div class="item">TensorFlow</div>
+                    <div class="item">Keras</div>
+                    <div class="item">XGBoost</div>
+                </div>
+                <div class="category">Deep Learning</div>
+                <div class="items">
+                    <div class="item">CNN</div>
+                    <div class="item">RNN</div>
+                    <div class="item">GANs</div>
+                    <div class="item">Autoencoders</div>
+                </div>
+                <div class="category">Soft Skills</div>
+                <div class="items">
+                    <div class="item">Communication Skills</div>
+                    <div class="item">Collaboration</div>
+                    <div class="item">Problem-Solving</div>
+                    <div class="item">Critical Thinking</div>
+                    <div class="item">Team Work</div>
+                    <div class="item">AI Ethics</div>
+                    <div class="item">Creativity</div>
+                    <div class="item">People Management</div>
+                    <div class="item">Emotional Intelligence</div>
+                    <div class="item">Decision-Making</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="softwares" class="tab-content">
+            <h2 class="section-title">Software Proficiency</h2>
+            <ul class="softwares">
+                <li>Visual Studio Code</li>
+                <li>Jupyter Notebook</li>
+                <li>Excel</li>
+                <li>Microsoft Power BI</li>
+                <li>MySQL</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="tab-content">
+            <h2 class="section-title">Contact Information</h2>
+            <ul class="contact">
+                <li>
+                    <strong>Email:</strong> <a href="mailto:muhammadbinsadiq6@gmail.com">muhammadbinsadiq6@gmail.com</a>
+                </li>
+                <li>
+                    <strong>Phone:</strong> +92-326-5072174
+                </li>
+                <li>
+                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/iammuhammadbinsadiq/" target="_blank">Muhammad Bin Sadiq</a>
+                </li>
+                <li>
+                    <strong>GitHub:</strong> <a href="https://github.com/imuhammadbinsadiq" target="_blank">imuhammadbinsadiq</a>
+                </li>
+                <li>
+                    <strong>Credly:</strong> <a href="https://www.credly.com/users/muhammad-bin-sadiq" target="_blank">Muhammad Bin Sadiq</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Muhammad Bin Sadiq. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(event, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+
+        // Set the default tab to be open
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".tab").click();
+        });
+    </script>
+</body>
+
+</html>
